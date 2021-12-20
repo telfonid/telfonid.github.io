@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Github",
+    "link": "https://github.com/telfonid",
+    "image": "images/social/github.svg"
+  },
+  {
+    "name": "Twitter",
+    "link": "https://twitter.com/telfonid",
+    "image": "images/social/twitter.svg"
+  }
+]
