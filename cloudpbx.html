@@ -74,19 +74,19 @@
             <div class="row features">
                 <div class="col-sm-6 col-lg-4 item" data-aos="fade-up-right"><i class="fa fa-gears icon"></i>
                     <h3 class="name" style="font-family:'Playfair Display', serif;">Kamailio</h3>
-                    <p class="description">SIP-proxy server Kamailio (with its own module db_kazoo, designed to access KAZOO data). Kamailio servers provide SIP device registration, presence data transfer and load balancing between FreeSWITCH servers (using the standard dispatcher module). The db_kazoo module, specially developed by the authors of the system for kamailio, provides interaction with KAZOO via AMQP.</p>
+                    <p class="description">Kamailio acts as a SIP load balancer and super-speed registrar.  We minimize the number of public network interfaces needed for clients and carriers by directing them to our load balancers.  Adding capacity to our platform becomes as easy as informing Kamailio of the new FreeSWITCH voice node.​  Kamailio also includes great DDoS attack blocking tools that protect both client SIP devices and FreeSWITCH media application nodes.</p>
                 </div>
                 <div class="col-sm-6 col-lg-4 item" data-aos="fade-down"><i class="fa fa-gears icon"></i>
                     <h3 class="name" style="font-family:'Playfair Display', serif;">FreeSWITCH</h3>
-                    <p class="description">FreeSWITCH (with its own module mod_kazoo, through which FreeSWITCH is integrated into the Erlang environment). Known to many IP-PBXs, FreeSWITCH is used in the project as a call handler, and all call management falls on the shoulders of KAZOO applications written in Erlang. A special FreeSWITCH module turns IP-PBXs into the so-called Erlang C-Node, which interacts directly with Erlang nodes.</p>
+                    <p class="description">We use FreeSWITCH primarily as a media processing server.  We rely heavily on FreeSWITCH's realtime event modules to keep statefulness across our cluster. FreeSWITCH is a carrier-grade switch in its own right.  Adding CloudPBX's Kamailio load balancing and clustering features extend FreeSWITCH to provide a truly high quality cluster of carrier-grade media processing nodes.</p>
                 </div>
                 <div class="col-sm-6 col-lg-4 item" data-aos="fade-up-left"><i class="fa fa-gears icon"></i>
                     <h3 class="name" style="font-family:'Playfair Display', serif;">CouchDB</h3>
-                    <p class="description">NoSQL DBMS BigCouch (yes, everyone knows that this project has died, sooner or later there will be a transition to CouchDB), written in Erlang is a high-performance, scalable, distributed DBMS.</p>
+                    <p class="description">It's a known secret that BigCouch/CouchDB is the magic fairy dust that makes CloudPBX so reliable.  With the ability to replicate data, dynamically adjust the read and write quorums, and a simple-to-use HTTP interface, developing our platform using BigCouch/CouchDB as the long term datastore has been a huge win.  As important, from an operational perspective, is that once you understand the knobs and levers to turn in order to tweak the performance characteristics, BigCouch/CouchDB is a breeze to operate and maintain.</p>
                 </div>
                 <div class="col-sm-6 col-lg-4 item" data-aos="fade-up-right"><i class="fa fa-gears icon"></i>
                     <h3 class="name" style="font-family:'Playfair Display', serif;">RabbitMQ</h3>
-                    <p class="description">AMQP RabbitMQ message server, also written in Erlang high-performance messaging server.</p>
+                    <p class="description">We primarily start and conduct conversations between Kamailio and FreeSWITCH nodes and our application/logic layer using a standard protocol named AMQP. RabbitMQ is our preferred AMQP serve. While we've had discussions about "faster" systems like ZeroMQ (theoretically anyway), RabbitMQ allows us to keep everything in native Erlang data types, pass things around our software quickly, and cluster our CloudPBX application/logic nodes easily. </p>
                 </div>
                 <div class="col-sm-6 col-lg-4 item" data-aos="zoom-in"><i class="fa fa-gears icon"></i>
                     <h3 class="name" style="font-family:'Playfair Display', serif;">HA Proxy</h3>
@@ -96,6 +96,18 @@
                     <h3 class="name" style="font-family:'Playfair Display', serif;">Erlang Application Processing</h3>
                     <p class="description">Erlang platform and programming language on which the system logic is written: eCallMgr components and Whistle apps.</p>
                 </div>
+            </div>
+            <div class="intro">
+                <h2 class="text-center" style="font-family:'Playfair Display', serif;">IMS Core Compatible Architecture</h2><br>
+                <p class="text-center" style="color:rgb(0,0,0);font-size:21px;">
+                    <img src="https://docs.telfon.id/assets/kazoo/kazoo-architecture.jpg" class="center" width="100%" height="50%"><img>
+                </p>
+            </div>
+            <div class="intro">
+                <h2 class="text-center" style="font-family:'Playfair Display', serif;">Applications Over API</h2><br>
+                <p class="text-center" style="color:rgb(0,0,0);font-size:21px;">
+                    <img src="assets/img/monster-app/app-monster.png" class="center" width="100%" height="40%"><img>
+                </p>
             </div>
         </div>
     </div>
